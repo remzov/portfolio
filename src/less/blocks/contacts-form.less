@@ -1,0 +1,38 @@
+.contacts-form {
+    background-color: @color-alt;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.contacts-form__text {
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.contacts-form__row {
+    margin-bottom: 20px;
+}
+
+.contacts-form__textarea  {
+    height: 140px;
+}
+
+.contacts-form__tip {
+    font-size: 14px;
+}
+
+.contacts-form__submit {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: @color-dark;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    transition: background 0.25s;
+    cursor: pointer;
+    &:hover {
+        background: lighten(@color-dark, 10%);
+        transition: background 0.25s;
+    }
+}

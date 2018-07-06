@@ -1,0 +1,26 @@
+.decor-link {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        &::after {
+            width: 100%;
+            transition: width 0.25s;
+        }
+    }
+    &::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        // background-color: @color-alt;
+        background-color: #fff;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.25s;
+    }
+}

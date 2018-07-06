@@ -1,0 +1,49 @@
+.link-out {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid @color-dark;
+    border-radius: 5px;
+    color: @color-dark;
+    font-size: 18px;
+    transition: background-color 0.25s;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        &::before {
+            width: 100%;
+            transition: width 0.25s;
+        }
+        .link-out__icon {
+            svg {
+                fill: #fff !important;
+                color: #fff !important;
+            }
+        }
+    }
+    span {
+        position: relative;
+        z-index: 2;
+    }
+    &::before {
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: @color-dark;
+        transition: width 0.25s;
+    }
+}
+
+.link-out__icon {
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: @color-dark !important;
+        color: @color-dark !important;
+    }
+}

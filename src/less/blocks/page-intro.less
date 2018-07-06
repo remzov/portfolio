@@ -1,0 +1,32 @@
+.page-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(255,255,255,0.2);
+    }
+}
+
+.page-intro__content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-intro__title {
+    font-family: @font-alt;
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 600;
+    color: @color-dark;
+}
