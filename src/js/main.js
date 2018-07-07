@@ -1,4 +1,6 @@
-import "./uikit.js"
-import "./feedback.js"
-import "./projects.js"
-
+import './uikit';
+import './feedback';
+import './projects';
+import './sprite.js';
+import './animations.js';
+import './hover.js';

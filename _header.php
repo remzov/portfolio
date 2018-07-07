@@ -8,15 +8,11 @@
                 </a>
             </div>
             <div class="main-header__rightside">
-                <?php wp_nav_menu(
-                    array (
-                        'menu'=> 'header_menu',
-                        'container' => 'nav',
-                        'container_class' => 'main-header__nav',
-                        'menu_class' => '',
-                        'menu_id' => ''
-                    )
-                ); ?>
+                <ul class="main-header__nav">
+                    <li><a href="#about" uk-scroll="offset: 80">О себе</a></li>
+                    <li><a href="#projects" uk-scroll="offset: 80">Проекты</a></li>
+                    <li><a href="#contacts" uk-scroll="offset: 80">Контакты</a></li>
+                </ul>
             </div>
         </div>
     </div>

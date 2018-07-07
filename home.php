@@ -4,6 +4,7 @@
 <?php get_header(); ?>
 <body>
 	<?php get_template_part('_header'); ?>
+	<?php the_post(); ?>
 	<main class="home">
 		<div class="home__intro">
 			<div class="home__intro-content">
@@ -15,13 +16,14 @@
 		</div>
 		<section class="home__about" id="about">
 			<div class="uk-container">
-				<h2 class="section-title section-title_dark">О себе</h2>
+				<h2 class="section-title">О себе</h2>
+				dgdg
 				<div class="home__about-cols">
 					<div class="home__about-photo">
-						<img src="<?php the_field('home_about-photo') ?>" alt="">
+						<img src="<?php the_field('home_my-photo') ?>" alt="">
 					</div>
 					<div class="home__about-text">
-						<?php the_field('home_about-text') ?>
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
