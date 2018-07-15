@@ -4,7 +4,9 @@
         <div class="main-header__cols">
             <div class="main-header__leftside">
                 <a href="<?php echo get_home_url(); ?>">
-                    <img class="main-header__logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" alt="">
+                    <svg class="main-header__logo">
+                        <use xlink:href="#logo">
+                    </svg>
                 </a>
             </div>
             <div class="main-header__rightside">

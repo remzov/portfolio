@@ -1,20 +1,21 @@
 (function(window, document) {
 	'use strict';
-	var file = '/wp-content/themes/portfolio/src/img/sprite.svg',
-		revision = 1;  
+	let file = '/wp-content/themes/portfolio/src/img/sprite.svg';
+	
+	var revision = 1;
 
 	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
 
-	var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
-		request,
-		data,
-		insertIT = function() {
-			document.body.insertAdjacentHTML('afterbegin', data);
-		},
-		insert = function() {
-			if (document.body) insertIT();
-			else document.addEventListener('DOMContentLoaded', insertIT);
-		};
+	let isLocalStorage = 'localStorage' in window && window['localStorage'] !== null;
+	var request;
+	var data;
+	var insertIT = function() {
+		document.body.insertAdjacentHTML('afterbegin', data);
+	};
+	var insert = function() {
+		if (document.body) insertIT();
+		else document.addEventListener('DOMContentLoaded', insertIT);
+	};
 
 	if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
 		data = localStorage.getItem('inlineSVGdata');
@@ -23,6 +24,7 @@
 			return true;
 		}
 	}
+
 	try {
 		request = new XMLHttpRequest();
 		request.open('GET', file, true);
@@ -37,6 +39,8 @@
 			}
 		};
 		request.send();
-	} catch (e) { return; }
+	} catch (e) {
+		return;
+	}
 }(window, document));
 

@@ -4,6 +4,12 @@
     background-color: @color-alt;
     padding: 20px 30px;
     border-radius: 5px;
+    position: relative;
+    &_isLoading {
+        .loading {
+            display: flex;
+        }
+    }
 }
 
 .contacts-form__text {
@@ -37,4 +43,16 @@
         background: lighten(@color-dark, 10%);
         transition: background 0.25s;
     }
+}
+
+.contacts-form__error {
+    display: none;
+}
+
+.contacts-form__input:invalid + .contacts-form__error {
+    display: block;
+}
+
+.contacts-form__textarea:invalid + .contacts-form__error {
+    display: block;
 }

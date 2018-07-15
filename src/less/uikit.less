@@ -29,3 +29,42 @@
         }
     }
 }
+
+.hook-form() {
+    box-shadow: none;
+}
+
+.hook-form-danger() {
+    border: 1px solid #df0024;
+    color: #df0024;
+    background-size: 8px 13px;
+    &:required::placeholder {
+        color: #df0024;
+    }
+    &:required:focus {
+        color: inherit;
+        border: 1px solid rgba(43, 143, 216, 1);
+        box-shadow: none;
+        &::placeholder {
+            color: inherit;
+        }
+    }
+}
+
+
+.hook-form-focus() {
+    border: 1px solid #000000;
+}
+
+.hook-form-success() {
+    border: 1px solid rgba(43, 143, 216, 1);
+}
+
+.isValidating {
+    &:valid {
+        .hook-form-success();
+    }
+    &:invalid {
+        .hook-form-danger();
+    }
+}

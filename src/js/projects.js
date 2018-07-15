@@ -1,4 +1,5 @@
 (function() {
+
 	const PATH = 'http://remz.loc/wp-json/wp/v2/projects';
 	let morePageNumber = 1;
 	let filterType = '';
@@ -31,9 +32,7 @@
 		}
 	});
 
-	modal.addEventListener('beforehide', () => {
-		modal.isReady = false;
-	});
+	modal.addEventListener('beforehide', () => modal.isReady = false);
 
 	//Навигация в модальном окне
 	let targetIndexID;
@@ -162,6 +161,7 @@
 		});
 		currentIndexID = projectsIDArr.indexOf(String(current));
 	}
+
 })();
 
 

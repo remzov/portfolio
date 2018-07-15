@@ -6,14 +6,14 @@
 <?php get_template_part('_header'); ?>  
 <?php the_post(); ?>
 <main class="home">
-    <div class="home__intro">
+    <section class="home__intro">
         <div class="home__intro-content">
             <h1 class="home__intro-title"><?php echo get_bloginfo('name'); ?></h1>
         </div>
         <a class="home__intro-button" href="#about" uk-scroll="offset: 80">
             <span class="home__intro-button-icon uk-preserve" uk-icon="icon: arrow-down"></span>
         </a>
-    </div>
+    </section>
     <section class="home__about section" id="about">
         <div class="uk-container">
             <h2 class="section-title section-title_dark">О себе</h2>
@@ -124,16 +124,16 @@
                             Вы также можете связаться со мной, используя форму.
                         </div>
                         <div class="contacts-form__row">
-                            <input class="contacts-form__input uk-input" name="user" type="text" placeholder="Ваше имя">
+                            <input class="contacts-form__input uk-input" name="user" type="text" placeholder="Ваше имя" title="Пожалуйста, напишите своё имя">
                         </div>
                         <div class="contacts-form__row">
-                            <input class="contacts-form__input uk-input" name="phone" type="tel" placeholder="Телефон">
+                            <input class="contacts-form__input uk-input js-tel-input" name="phone" type="tel" placeholder="Телефон" title="Пожалуйста, напишите свой телефон">
                         </div> 
                         <div class="contacts-form__row">
-                            <input class="contacts-form__input uk-input" name="email" type="email" placeholder="Email*" required>
+                            <input class="contacts-form__input uk-input" name="email" type="email" placeholder="Email*" required title="Пожалуйста, напишите свой e-mail">
                         </div>
                         <div class="contacts-form__row">
-                            <textarea class="contacts-form__textarea uk-textarea" name="message" placeholder="Сообщение*" required></textarea>
+                            <textarea class="contacts-form__textarea uk-textarea" name="message" placeholder="Сообщение*" required title="Пожалуйста, напишите своё сообщение"></textarea>
                         </div>
                         <div class="contacts-form__row">
                             <div class="contacts-form__tip">
@@ -141,7 +141,13 @@
                             </div>
                         </div>
                         <div class="contacts-form__row">
-                            <button class="contacts-form__submit" type="submit" name="contacts_submit">Отправить</button>
+                            <button class="contacts-form__submit" type="submit" name="contacts_submit" formnovalidate>Отправить</button>
+                        </div>
+                        <div class="loading">
+                            <svg class="loading__pic">
+                                <use xlink:href="#loading">
+                            </svg>  
+                            <div class="loading__message"></div>
                         </div>
                     </form> 
                 </div>
@@ -160,7 +166,10 @@
 				</div>
 			</div>
 		</section> -->
-	</main>
+</main>
+<a class="to-top" href="#" uk-scroll uk-totop>
+
+</a>
 <?php get_template_part('_footer'); ?>
 </body>
 </html>

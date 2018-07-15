@@ -3,4 +3,5 @@ import './feedback';
 import './projects';
 import './sprite.js';
 import './animations.js';
-import './hover.js';
+import './validation.js';
+import './mask.js';
