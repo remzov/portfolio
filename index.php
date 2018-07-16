@@ -57,7 +57,7 @@
                             <h2 class="project-modal__title"></h2>
                             <div class="project-modal__desc">
                             </div>
-                            <a class="link-out" href="#"><span>Перейти<span class="link-out__icon uk-preserve" uk-icon="icon: arrow-right"></span></span></a>
+                            <a class="link-out" href="" target="_blank"><span>Перейти<span class="link-out__icon uk-preserve" uk-icon="icon: arrow-right"></span></span></a>
                             <div class="project-modal__nav">
                                 <button class="project-modal__nav-prev" type="button">
                                     <span uk-icon="icon: chevron-left"></span>

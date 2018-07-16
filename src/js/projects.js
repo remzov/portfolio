@@ -51,11 +51,13 @@
 		showProjectModal(projectsIDArr[targetIndexID]);
 	});
 
+	
 	function formRequest() {
 		let moreRequest = new XMLHttpRequest();
 		moreRequest.open('GET', PATH + '?per_page=4&page=' + morePageNumber + '&filter[meta_key]=project_type&filter[meta_value]=' + filterType);
 		moreRequest.send();
 		getProjects(moreRequest);
+
 	}
 
 	function getProjects(request) {
@@ -68,7 +70,7 @@
 		if ((request.readyState == 4) && (request.status == 200)) {
 			let projectsArr = JSON.parse(request.responseText);
 			projectsArr.forEach(element => {
-				renderProjectItem(element.title.rendered, element.content.rendered, element.acf.project_gallery[0].url, element.id);
+				renderProjectItem(element.title.rendered, element.acf.project_intro, element.acf.project_gallery[0].url, element.id);
 			}); 
 			morePageNumber++;
 			checkMoreBtn(checkPageCount(request));
@@ -87,9 +89,9 @@
 		}
 	}
 
-	function renderProjectItem(title, desc, img, id) {
+	function renderProjectItem(title, intro, img, id) {
 		let projectItem = document.createElement('div');
-		let projectItemHTML = '<div class="project-item"><div class="project-item__image uk-cover-container"><img src="' + img + '" alt="" data-uk-cover></div><div class ="project-item__desc"><div class="project-item__title">' + title + '</div><div class="project-item__text">' + desc + '</div><button class="link-more js-project" uk-toggle="target: #project" type="button" data-id="' + id + '">Подробнее</button></div></div>';
+		let projectItemHTML = '<div class="project-item"><div class="project-item__image"><img src="' + img + '" alt=""></div><div class ="project-item__desc"><div class="project-item__title">' + title + '</div><div class="project-item__text">' + intro + '</div><button class="link-more js-project" uk-toggle="target: #project" type="button" data-id="' + id + '">Подробнее</button></div></div>';
 		document.querySelector('.home__projects-grid').appendChild(projectItem);
 		projectItem.insertAdjacentHTML('afterBegin', projectItemHTML);
 	}
@@ -118,7 +120,8 @@
 		let modalDesc = document.querySelector('.project-modal__desc');
 		let modalGalleryArr = [];
 		let galleryContainer = document.querySelector('.uk-slideshow-items');
-        
+		let modalLink = document.querySelector('.link-out');
+		
 		modal.setAttribute('data-id',projectData.id);
 		projectData.acf.project_gallery.forEach(element => {
 			modalGalleryArr.push(element.url);
@@ -127,9 +130,10 @@
 		modalDesc.innerHTML = projectData.content.rendered;  
 		galleryContainer.innerHTML = '';
 		modalGalleryArr.forEach(element => {
-			galleryContainer.insertAdjacentHTML('beforeend', '<li><img src="' + element + '" alt="" uk-cover></li>');
+			galleryContainer.insertAdjacentHTML('beforeend', '<li><img src="' + element + '" alt=""></li>');
 		});
 		galleryContainer.children[0].classList.add('test');
+		modalLink.setAttribute('href', projectData.acf.project_link);
 		modal.isReady = true;
 		UIkit.modal(modal).show();
 		setProjectNav(projectData.id);

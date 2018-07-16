@@ -11,11 +11,14 @@
 }
 
 .hook-modal-body() {
-    padding: 30px 10px;
+    padding: 30px;
+    @media screen and (max-width: @breakpoint-small) {
+        padding: 30px 15px;
+    }
 }
 
 .hook-modal-dialog() {
-    width: 800px;
+    width: 1000px;
 }
 
 .hook-close() {
@@ -25,7 +28,7 @@
 
 .modal-cover-misc() {
     .uk-slideshow-items {
-        height: 500px !important;
+        height: 650px !important;
         @media screen and (max-width: @breakpoint-small) {
             height: 300px !important;
         }

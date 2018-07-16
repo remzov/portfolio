@@ -7,6 +7,9 @@ window.addEventListener('load', () => {
 
 	let controller = new ScrollMagic.Controller();
 
+	//сцена 'Интро'
+	let introTween = TweenMax.fromTo('.home__intro-title', 1, {y: 200, opacity: 0}, {y: 0, opacity: 1});
+
 	//сцена 'Обо мне'
 	let aboutTween = new TimelineMax();
 	aboutTween.fromTo('.home__about-photo', 1, {x: -200, opacity: 0}, {x: 0, opacity: 1})

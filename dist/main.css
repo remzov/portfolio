@@ -5004,7 +5004,7 @@ ul.uk-nav-sub {
   transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
   transition-property: opacity, transform, -webkit-transform;
-  width: 800px;
+  width: 1000px;
 }
 /*
  * Open
@@ -5045,7 +5045,12 @@ ul.uk-nav-sub {
  ========================================================================== */
 .uk-modal-body {
   padding: 30px 30px;
-  padding: 30px 10px;
+  padding: 30px;
+}
+@media screen and (max-width: 640px) {
+  .uk-modal-body {
+    padding: 30px 15px;
+  }
 }
 .uk-modal-header {
   padding: 15px 30px;
@@ -12354,7 +12359,7 @@ iframe.uk-cover {
   }
 }
 .uk-modal-dialog {
-  width: 800px;
+  width: 1000px;
 }
 .isValidating:valid {
   border-color: #32d296;
@@ -12654,6 +12659,7 @@ iframe.uk-cover {
   box-sizing: border-box;
   padding-top: 100%;
   position: relative;
+  overflow-y: hidden;
 }
 .project-item:hover .project-item__desc {
   opacity: 1;
@@ -12689,6 +12695,7 @@ iframe.uk-cover {
   margin-bottom: 15px;
   color: #333;
   font-size: 22px;
+  line-height: 1.1;
 }
 .project-item__text {
   margin-bottom: 20px;
@@ -12909,7 +12916,7 @@ iframe.uk-cover {
   color: #333;
 }
 .project-modal .uk-slideshow-items {
-  height: 500px !important;
+  height: 650px !important;
 }
 @media screen and (max-width: 640px) {
   .project-modal .uk-slideshow-items {
@@ -12929,7 +12936,7 @@ iframe.uk-cover {
 }
 .project-modal__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
 }
 @media screen and (max-width: 960px) {
@@ -12960,6 +12967,7 @@ iframe.uk-cover {
   position: absolute;
   bottom: 0;
   left: 0;
+  white-space: nowrap;
 }
 .project-modal__nav-next,
 .project-modal__nav-prev {
