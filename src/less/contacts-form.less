@@ -10,11 +10,17 @@
             display: flex;
         }
     }
+    @media screen and (max-width: @breakpoint-small) {
+        padding: 20px 15px;
+    }
 }
 
 .contacts-form__text {
     margin-bottom: 30px;
     font-size: 26px;
+    @media screen and (max-width: @breakpoint-small) {
+       font-size: 16px;
+    }
 }
 
 .contacts-form__row {
@@ -55,4 +61,5 @@
 
 .contacts-form__textarea:invalid + .contacts-form__error {
     display: block;
+
 }

@@ -10,13 +10,25 @@
     .hook-modal-dialog;
 }
 
+.hook-modal-body() {
+    padding: 30px 10px;
+}
+
 .hook-modal-dialog() {
     width: 800px;
+}
+
+.hook-close() {
+    top: 5px;
+    right: 5px;
 }
 
 .modal-cover-misc() {
     .uk-slideshow-items {
         height: 500px !important;
+        @media screen and (max-width: @breakpoint-small) {
+            height: 300px !important;
+        }
     }
     .uk-cover {
         top: 0;

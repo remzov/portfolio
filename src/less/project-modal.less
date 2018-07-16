@@ -6,6 +6,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+    @media screen and (max-width: @breakpoint-medium) {
+        & > div {
+            grid-column: 1 / span 2;
+        }
+    }
 }
 
 .project-modal__title {

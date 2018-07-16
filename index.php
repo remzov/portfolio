@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php get_header(); ?>
-<body>
+<body class="page">
 <?php get_template_part('_header'); ?>  
 <?php the_post(); ?>
 <main class="home">
@@ -17,12 +17,14 @@
     <section class="home__about section" id="about">
         <div class="uk-container">
             <h2 class="section-title section-title_dark">О себе</h2>
-            <div class="home__about-cols">
-                <div class="home__about-photo">
+            <div class="home__about-grid">
+                <div>
                     <img src="<?php the_field('my-photo') ?>" alt="">
                 </div>
-                <div class="home__about-text">
-                    <?php the_content(); ?>
+                <div>
+                    <div class="home__about-text">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
             </div>
         </div>

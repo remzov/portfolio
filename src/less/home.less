@@ -28,10 +28,14 @@
 }
 
 .home__intro-title {
+    text-align: center;
     font-family: @font-alt;
     font-size: 70px;
     font-weight: 600;
     color: @color-dark;
+    @media screen and (max-width: @breakpoint-small) {
+        font-size: 40px;
+    }
 }
 
 .home__intro-button {
@@ -91,20 +95,26 @@
     }
 }
 
-.home__about-cols {
-    display: flex;
-    align-items: flex-start;
-}
-
-.home__about-photo {
-    min-width: 450px;
-    margin-right: 100px;
+.home__about-grid {
+    display: grid;
+    grid-column-gap: 100px;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    @media screen and (max-width: @breakpoint-medium) {
+        & > div {
+            grid-column: 1 / span 2;
+        }
+    }
 }
 
 .home__about-text {
     font-size: 20px;
     font-weight: 100;
     line-height: 1.6;
+    ul {
+        list-style-type: square;
+    }
 }
 
 .home__projects {
@@ -138,7 +148,7 @@
     grid-gap: 0;
     grid-template-columns: repeat(auto-fit,  300px);
     grid-template-rows: 300px;
-    position: relative;
+    justify-content: center;
 }
 
 .home__contacts-grid {
@@ -146,6 +156,12 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 100px;
     justify-content: center;
+    @media screen and (max-width: @breakpoint-medium) {
+        justify-content: flex-start;
+        & > div {
+            grid-column: 1 / span 2;
+        }
+    }
 }
 
 .home__studio {
