@@ -19,7 +19,7 @@
             <h2 class="section-title section-title_dark">О себе</h2>
             <div class="home__about-grid">
                 <div>
-                    <img src="<?php the_field('my-photo') ?>" alt="">
+                    <img class="home__about-image" src="<?php the_field('my-photo') ?>" alt="">
                 </div>
                 <div>
                     <div class="home__about-text">

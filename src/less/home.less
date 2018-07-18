@@ -101,11 +101,18 @@
     grid-row-gap: 40px;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
+    & > div:nth-child(1) {
+        justify-self: flex-end;
+    }
     @media screen and (max-width: @breakpoint-medium) {
         & > div {
             grid-column: 1 / span 2;
         }
     }
+}
+
+.home__about-img {
+    max-width: 200px;
 }
 
 .home__about-text {

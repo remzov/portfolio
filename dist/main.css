@@ -12546,10 +12546,16 @@ iframe.uk-cover {
   grid-template-columns: 1fr 1fr;
   justify-content: center;
 }
+.home__about-grid > div:nth-child(1) {
+  justify-self: flex-end;
+}
 @media screen and (max-width: 960px) {
   .home__about-grid > div {
     grid-column: 1 / span 2;
   }
+}
+.home__about-img {
+  max-width: 200px;
 }
 .home__about-text {
   font-size: 20px;
